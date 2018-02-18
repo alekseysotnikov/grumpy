@@ -15,6 +15,6 @@ open http://localhost:8080
 ## Docker
 ```
 docker build -t grumpy .
-docker run --publish 3001:8080 grumpy
-open http://localhost:3001
+docker run -p 8080:8080 grumpy
+open http://localhost:8080
 ```
