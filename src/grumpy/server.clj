@@ -165,9 +165,13 @@
   (let [args-map (apply array-map args)
         port-str (or (get args-map "-p")
                      (get args-map "--port")
-                     "8080")]
+                     "8080")
+        host     (or (get args-map "-h")
+                     (get args-map "--host")
+                     "localhost")]
     (println "Starting web server on port" port-str)
-    (web/run #'app { :port (Integer/parseInt port-str) })))
+    (web/run #'app { :port (Integer/parseInt port-str)
+                     :host host })))
 
 
 (comment
